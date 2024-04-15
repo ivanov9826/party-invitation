@@ -1,5 +1,6 @@
 import styles from "./Header.module.scss";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { colors } from "../../../theme/colors";
 
 const Header: React.FC = () => {
   return (
@@ -7,10 +8,28 @@ const Header: React.FC = () => {
       <div className={styles.logo}>Rubber Duck</div>
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <NavLink
+            to="/"
+            style={({ isActive }) => {
+              return {
+                color: isActive ? colors.orange[2] : "white",
+              };
+            }}
+          >
+            Home
+          </NavLink>
         </li>
         <li>
-          <Link to="/invitees">Invitees</Link>
+          <NavLink
+            to="/invitees"
+            style={({ isActive }) => {
+              return {
+                color: isActive ? colors.orange[2] : "white",
+              };
+            }}
+          >
+            Invitees
+          </NavLink>
         </li>
       </ul>
     </nav>
