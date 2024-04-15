@@ -1,9 +1,9 @@
 import { officeCoords } from "../constants/constants";
-import { Partner } from "../interfaces/interfaces";
+import { IPartner } from "../interfaces/interfaces";
 
 const { latitude: officeLatitude, longitude: officeLongitude } = officeCoords;
 
-export default function rangeCheck(partner: Partner, range: number) {
+export default function rangeCheck(partner: IPartner, range: number) {
   const partnerLongitude = +partner.longitude;
   const partnerLatitude = +partner.latitude;
 

@@ -1,14 +1,14 @@
 import style from "./PartnerList.module.scss";
 import { useMemo } from "react";
-import { eligibleParnter } from "../../../interfaces/interfaces";
+import { IEligiblePartner } from "../../../interfaces/interfaces";
 import partnersData from "../../../constants/partnersData.json";
 import rangeCheck from "../../../utils/rangeCheck";
 import PartnerCard from "../../molecules/PartnerCard/PartnerCard";
-import ListTitle from "../../atoms/ListTitle/ListTitle";
+import Title from "../../atoms/Title/Title";
 
 const PartnerList: React.FC = () => {
   const partnersArray = useMemo(() => {
-    const tempArr: eligibleParnter[] = [];
+    const tempArr: IEligiblePartner[] = [];
     partnersData.forEach((partner) => {
       const result = rangeCheck(partner, 100);
       if (result) tempArr.push(result);
@@ -18,11 +18,13 @@ const PartnerList: React.FC = () => {
 
   return (
     <div className={style["list-wrapper"]}>
-      <ListTitle text="Eligible partners:" />
+      <Title text="Eligible partners" size="small" />
       <div className={style["partners-container"]}>
-        {partnersArray.map((partner, index) => (
-          <PartnerCard partner={partner} key={index} />
-        ))}
+        {partnersArray.length ? (
+          partnersArray.map((partner, index) => <PartnerCard partner={partner} key={index} />)
+        ) : (
+          <span>Loading...</span>
+        )}
       </div>
     </div> // Could add pagination
   );
