@@ -3,7 +3,7 @@ import { Partner } from "../interfaces/interfaces";
 
 const { latitude: officeLatitude, longitude: officeLongitude } = officeCoords;
 
-export default function rangeCheck(partner: Partner) {
+export default function rangeCheck(partner: Partner, range: number) {
   const partnerLongitude = +partner.longitude;
   const partnerLatitude = +partner.latitude;
 
@@ -18,5 +18,8 @@ export default function rangeCheck(partner: Partner) {
 
   const distance = Math.sqrt(x * x + y * y) * R;
 
-  if (distance <= 100) return partner;
+  if (distance <= range) {
+    const eligibleParnter = { partner_id: partner.partner_id, name: partner.name, distance: Math.ceil(distance) };
+    return eligibleParnter;
+  }
 }

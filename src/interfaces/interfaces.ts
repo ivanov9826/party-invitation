@@ -4,3 +4,9 @@ export interface Partner {
   partner_id: number;
   name: string;
 }
+
+export interface eligibleParnter {
+  partner_id: number;
+  name: string;
+  distance: number;
+}
