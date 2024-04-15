@@ -1,4 +1,4 @@
-import "./PartnerList.scss";
+import style from "./PartnerList.module.scss";
 import { useMemo } from "react";
 import { eligibleParnter } from "../../../interfaces/interfaces";
 import partnersData from "../../../constants/partnersData.json";
@@ -17,9 +17,9 @@ const PartnerList: React.FC = () => {
   }, []);
 
   return (
-    <div className="list-wrapper">
+    <div className={style["list-wrapper"]}>
       <ListTitle text="Eligible partners:" />
-      <div className="partners-container">
+      <div className={style["partners-container"]}>
         {partnersArray.map((partner, index) => (
           <PartnerCard partner={partner} key={index} />
         ))}
