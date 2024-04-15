@@ -1,9 +1,9 @@
-import { eligibleParnter } from "../../../interfaces/interfaces";
+import { IEligiblePartner } from "../../../interfaces/interfaces";
 import Wrapper from "../../atoms/Wrapper/Wrapper";
 import Paragraph from "../../atoms/Paragraph/Paragraph";
 
 interface PartnerCardProps {
-  partner: eligibleParnter;
+  partner: IEligiblePartner;
 }
 
 const PartnerCard: React.FC<PartnerCardProps> = ({ partner }) => {

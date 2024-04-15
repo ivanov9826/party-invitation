@@ -1,10 +1,14 @@
 @import "../../../theme/font.scss";
 @import "../../../theme/colors.scss";
 
-.list-title {
-  font-family: $font-family-roboto;
+.title-small {
   font-weight: $font-weight-black;
   font-size: 2rem;
   margin-bottom: 2rem;
   color: $gray-1;
+}
+
+.title-big {
+  @extend .title-small;
+  font-size: 4rem;
 }

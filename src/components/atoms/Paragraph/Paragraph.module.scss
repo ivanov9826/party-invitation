@@ -1,10 +1,8 @@
 @import "../../../theme/font.scss";
 
 .paragraph {
-  font-family: $font-family-roboto;
   font-weight: $font-weight-regular;
   text-align: left;
   margin: 0.25rem 0.75rem;
   width: 15rem;
-  max-width: 15rem;
 }
