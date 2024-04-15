@@ -1,10 +1,13 @@
 import "./App.css";
-import PartnerList from "./components/organisms/PartnerList/PartnerList";
+import Header from "./components/organisms/Header/Header";
+import Router from "./routes/Routes";
+//Add header
 
 function App() {
   return (
     <>
-      <PartnerList />
+      <Header />
+      <Router />
     </>
   );
 }
