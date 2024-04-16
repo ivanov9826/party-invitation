@@ -1,6 +1,20 @@
+@import "../../theme/colors.scss";
+
 .description {
   display: block;
   max-width: 52rem;
-  margin-top: 6rem;
+  margin: 6rem 0;
   color: white;
+}
+
+.link {
+  color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: $orange-1;
+
+  &:hover {
+    background-color: $orange-3;
+    color: white;
+  }
 }

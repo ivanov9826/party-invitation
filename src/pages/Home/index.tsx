@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import Title from "../../components/atoms/Title/Title";
 import style from "./styles.module.scss";
 
@@ -15,6 +16,9 @@ const Home: React.FC = () => {
         Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected
         humour, or non-characteristic words etc.
       </span>
+      <NavLink to="/invitees" className={style.link}>
+        Click here to view partners within 100 km range of the office
+      </NavLink>
     </div>
   );
 };
